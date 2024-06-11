@@ -13,7 +13,7 @@ if [ ! -f authority/authority.p12 ]; then
   openssl pkcs12 -export -out authority/authority.p12 -password pass:1234 -in authority/authority.crt -nokeys
 fi
 
-declare -a dirs=("portainer" "rabbitmq" "sistema-tpa" "site-tpa" "app-tpa" "portal-tpa" "rabbitmq-uba-hml" "rabbitmq-uba-prd" "agente-uba-hml" "agente-uba-prd" "fast2mine" "prometheus-uba-prd" "edusoftlocal")
+declare -a dirs=("portainer")
 for dir in "${dirs[@]}"
 do
   if [ ! -f $dir/private.key ]; then
